@@ -32,13 +32,6 @@ const netSalary = (grossSalary, NHIFDeduction, NSSFDeduction, tax) => {
     return netSalary;
 }
 
-// Example inputs
-const basicSalary = 2000000;
-const benefits = 4000000;
-const NHIF_RATE = 0.02; // Example rate for NHIF deductions (2%)
-const NSSF_RATE = 0.06; // Example rate for NSSF deductions (6%)
-const tax = 1000000; // Example tax amount
-
 // Function calls
 const gross = grossSalary(basicSalary, benefits);
 const nhifDeduction = nhifDeductions(gross, NHIF_RATE);
