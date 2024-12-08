@@ -1,26 +1,32 @@
-//Below is a code that defines a function called calculateMark(): 
-function calculateMark() { 
- 	// Prompt the user to input marks 
-	const mark = prompt("Enter the student's marks(0-100):"); 
- // Change the input to a number 
-	mark=Number(mark); 
- // Check if the input is valid (0-100) 
-	if (mark < 0 || mark > 100) { 
- 		console.log("Please enter a valid number between 0 and 100."); 
-	} 
-	else { 
- 		// Determine the grade based on the mark 
-		if (mark>79) 
- 			console.log(mark + " - Grade A"); 
-		else if (mark>=60) 
- 			console.log(mark + " - Grade B"); 
-		else if (mark>=50) 
- 			console.log(mark + " - Grade C"); 
-		else if (mark>=40) 
-			console.log(mark + " - Grade D"); 
-		else 
-			console.log(mark  + " - Grade E"); 
-	} 
-} 
- // Call the function to prompt for input 
- calculateMark();
+function getGrade() {
+  // Ask the user for marks using a prompt. The input is converted to an integer using parseInt.
+  let marks = parseInt(prompt("Enter marks (0-100):"));
+
+  // Check if the input marks are valid (between 0 and 100).
+  if (marks < 0 || marks > 100 || isNaN(marks)) {
+      // If the marks are invalid, show an alert with an error message.
+      alert("Invalid input! Please enter a number between 0 and 100.");
+  } else {
+      // Declare a variable to store the grade.
+      let grade;
+
+      // Assign a grade based on the marks entered by the user.
+      if (marks > 79) {
+          grade = "A";  // Marks greater than 79 get an "A".
+      } else if (marks >= 60) {
+          grade = "B";  // Marks between 60 and 79 get a "B".
+      } else if (marks >= 50) {
+          grade = "C";  // Marks between 50 and 59 get a "C".
+      } else if (marks >= 40) {
+          grade = "D";  // Marks between 40 and 49 get a "D".
+      } else {
+          grade = "E";  // Marks less than 40 get an "E".
+      }
+
+      // Show the grade using an alert.
+      alert("Grade: " + grade);
+  }
+}
+
+// Call the function to start the process
+getGrade();
